@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Webpage</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="banner">
+        <h1>Professional Webpage Banner</h1>
+    </header>
+    <main class="container">
+        <div class="box">
+            <h2 onclick="toggleBox(this)">Form Section</h2>
+            <div class="box-content-form">
+                
+                <div class="form-group">
+                    <label class="placeholder">System Version:</label>
+                    <input type="text" id="input1" placeholder="Text 1">
+                    <button onclick="copyToClipboard('input1', 'notif1')">Copy</button>
+                    <span id="notif1" class="notification"></span>
+                </div>
+                <div class="form-group alternate">
+                    <label class="placeholder">Hardware Number:</label>
+                    <input type="text" id="input2" placeholder="Text 2">
+                    <button onclick="copyToClipboard('input2', 'notif2')">Copy</button>
+                    <span id="notif2" class="notification"></span>
+                </div>
+                <div class="form-group">
+                    <label class="placeholder">Firmware Version:</label>
+                    <input type="text" id="input3" placeholder="Text 3">
+                    <button onclick="copyToClipboard('input3', 'notif3')">Copy</button>
+                    <span id="notif3" class="notification"></span>
+                </div>
+                <div class="form-group alternate">
+                    <label class="placeholder">Serial Number:</label>
+                    <input type="text" id="input4" placeholder="Text 4">
+                    <button onclick="copyToClipboard('input4', 'notif4')">Copy</button>
+                    <span id="notif4" class="notification"></span>
+                </div>
+                <div class="form-group">
+                    <label class="placeholder">Software Version:</label>
+                    <input type="text" id="input5" placeholder="Text 5">
+                    <button onclick="copyToClipboard('input5', 'notif5')">Copy</button>
+                    <span id="notif5" class="notification"></span>
+                </div>
+                <div class="form-group alternate">
+                    <label class="placeholder">Configuration ID:</label>
+                    <input type="text" id="input6" placeholder="Text 6">
+                    <button onclick="copyToClipboard('input6', 'notif6')">Copy</button>
+                    <span id="notif6" class="notification"></span>
+                </div>
+              
+            </div>
+          </div>
+        <div class="box">
+            <h2 onclick="toggleBox(this)">Box 2</h2>
+            <div class="box-content">
+                <p>Sample text inside the box. This is a placeholder.</p>
+                <ul>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                </ul>
+            </div>
+        </div>
+        <div class="box">
+            <h2 onclick="toggleBox(this)">Box 3</h2>
+            <div class="box-content">
+                <p>Sample text inside the box. This is a placeholder.</p>
+                <ul>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Repeat the boxes as needed -->
+        <div class="box">
+            <h2 onclick="toggleBox(this)">Box 4</h2>
+            <div class="box-content">
+                <p>Sample text inside the box. This is a placeholder.</p>
+                <ul>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                </ul>
+            </div>
+        </div>
+        <div class="box">
+            <h2 onclick="toggleBox(this)">Box 5</h2>
+            <div class="box-content">
+                <p>Sample text inside the box. This is a placeholder.</p>
+                <ul>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                </ul>
+            </div>
+        </div>
+        <div class="box">
+            <h2 onclick="toggleBox(this)">Box 6</h2>
+            <div class="box-content">
+                <p>Sample text inside the box. This is a placeholder.</p>
+                <ul>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                </ul>
+            </div>
+        </div>
+        <div class="box">
+            <h2 onclick="toggleBox(this)">Box 7</h2>
+            <div class="box-content">
+                <p>Sample text inside the box. This is a placeholder.</p>
+                <ul>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                </ul>
+            </div>
+        </div>
+        <div class="box">
+            <h2 onclick="toggleBox(this)">Box 8</h2>
+            <div class="box-content">
+                <p>Sample text inside the box. This is a placeholder.</p>
+                <ul>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                </ul>
+            </div>
+        </div>
+        <div class="box">
+            <h2 onclick="toggleBox(this)">Box 9</h2>
+            <div class="box-content">
+                <p>Sample text inside the box. This is a placeholder.</p>
+                <ul>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function copyToClipboard(inputId, notifId) {
+            var copyText = document.getElementById(inputId);
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); /* For mobile devices */
+            navigator.clipboard.writeText(copyText.value);
+            
+            var notification = document.getElementById(notifId);
+            notification.innerText = "Copied!";
+            setTimeout(function() {
+                notification.innerText = "";
+            }, 2000);
+        }
+
+        function toggleBox(element) {
+            var content = element.nextElementSibling;
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+
+        let hour = 10;
+
+        if (hour => 6 && hour < 18) {
+        console.log('Good morning');
+
+        }
+
+
+    </script>
+</body>
+</html>
